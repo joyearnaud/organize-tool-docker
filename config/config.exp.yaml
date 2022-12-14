@@ -1,0 +1,25 @@
+rules:
+  - name: "type doc"
+    locations:
+      - ./Input/
+    filters:
+      - extension:
+          - txt
+          - doc
+          - pdf
+          - docx
+      - name:   
+          case_sensitive: false
+      - lastmodified:
+          hours: 4
+    actions:
+      - move: './Output/doc/{extension.upper()}/'
+    subfolders: false
+  - name: "Sort USER ADMIN"
+    locations: ./Input/
+    subfolders: true
+    filters:
+      - extension: pdf
+      - filecontent: '(?:(?i)user.*admin|(?i)admin.*user)'
+    actions:
+      - move: ~/Output/user/
