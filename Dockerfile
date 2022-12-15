@@ -2,6 +2,8 @@ FROM python:3.8-slim
 
 RUN apt-get update
 RUN apt-get install cron \ 
+  curl \
+  entr \  
   gcc -y
 
 RUN touch /var/spool/cron/crontabs/pi

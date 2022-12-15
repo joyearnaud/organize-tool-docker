@@ -6,5 +6,7 @@ if [ $# -eq 1 ]
     service cron restart
     /bin/bash
   else
-	  /usr/local/bin/organize sim >> /var/log/organize/organize.log 2>&1 && exit 0
+    while true; do
+      ls -d Input | entr -d /usr/local/bin/organize sim >> /var/log/organize/organize.log 2>&1 && exit 0
+    done
 fi

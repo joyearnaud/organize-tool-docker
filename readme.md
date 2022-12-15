@@ -34,5 +34,5 @@ docker run -dit --rm --name docker-organize -v "/config/":/home/pi/.config/organ
 
 ### Moving from CRON to polling or inotify
 
-todo
+use of [entr](https://eradman.com/entrproject/), watching `/Input` dir, launch organize-tool on boot and for change made into the dir.
 
